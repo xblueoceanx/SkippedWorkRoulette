@@ -1,7 +1,9 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class RouletteController {
@@ -21,5 +23,12 @@ public class RouletteController {
 		return "RouletteView.html";
 
 	}
+
+	//スタート画面からルーレット画面に遷移
+	@PostMapping("/Roulette")
+    public String toRedirect(RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute("pushedBtn", "スタートボタン");
+        return "RouletteView.html";
+    }
 
 }

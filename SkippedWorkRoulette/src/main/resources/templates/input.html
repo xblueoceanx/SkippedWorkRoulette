@@ -6,6 +6,8 @@
 </head>
 <body>
 	<!-- スタートボタンの生成 -->
-	<input type="button" name="SUBMIT"  value="スタートボタン" th:attr="onClick='location.href=\''+${url}+'\''">
+	<form method="post" th:action="@{/Roulette}">
+    	<input type="submit" value="スタートボタン" />
+    </form>
 </body>
 </html>
